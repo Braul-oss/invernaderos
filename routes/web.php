@@ -93,3 +93,6 @@ Route::name('planta.pdf')->get('plantas/pdf',[ControladorPlantas::class,'pdf_pla
 
 //-----------------------------------------PDF/Invernaderos-----------------------------------------------------------------
 Route::name('invernadero.pdf')->get('invernaderos/pdf',[ControladorInvernaderos::class,'pdf_invernaderos']);
+
+//-----------------------------------------PDF/Herramientas-----------------------------------------------------------------
+Route::name('herramienta.pdf')->get('herramientas/pdf',[ControladorHerramientas::class,'pdf_herramientas']);

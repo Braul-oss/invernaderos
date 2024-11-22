@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Herramientas;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class ControladorHerramientas extends Controller
 {
@@ -97,5 +98,26 @@ class ControladorHerramientas extends Controller
     public function herramienta_borrar(Herramientas $id){
         $id->delete();
         return redirect()->route('herramientas');
+    }
+
+    public function pdf_herramientas(Request $request){
+        // Iniciar la consulta base
+        $query = Herramientas::query();
+    
+        // Aplicar filtros si existen
+        if ($request->filled('buscar')) {
+            $query->where('nombre', 'like', '%' . $request->buscar . '%')
+                  ->orWhere('descripcion', 'like', '%' . $request->buscar . '%')
+                  ->orWhere('precio', 'like', '%' . $request->buscar . '%');
+        }
+    
+        // Obtener los registros filtrados o todos
+        $herramienta = $query->get();
+    
+        // Generar el PDF
+        $pdf = Pdf::loadView('herramientas.pdf', compact('herramienta'));
+    
+        // Descargar el PDF
+        return $pdf->download("lista_de_herramientas.pdf");
     }
 }
