@@ -10,4 +10,24 @@ class ControladorUsuario extends Controller
     
         return view('home_user');
     }
+
+    public function productos_invernadero(){
+    
+        return view('productos_invernadero');
+    }
+
+    public function productos_fertilizante(){
+    
+        return view('productos_fertilizante');
+    }
+
+    public function productos_herramienta(){
+    
+        return view('productos_herramienta');
+    }
+
+    public function productos_planta(){
+    
+        return view('productos_planta');
+    }
 }

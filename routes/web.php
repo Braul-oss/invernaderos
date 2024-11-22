@@ -96,3 +96,13 @@ Route::name('invernadero.pdf')->get('invernaderos/pdf',[ControladorInvernaderos:
 
 //-----------------------------------------PDF/Herramientas-----------------------------------------------------------------
 Route::name('herramienta.pdf')->get('herramientas/pdf',[ControladorHerramientas::class,'pdf_herramientas']);
+
+//-----------------------------------------Validaciones Usuario
+Route::name('invernadero_validar')->get('/invernadero_validar',[HomeController::class, 'invernadero_validar'])->middleware('auth');
+Route::name('productos_invernadero')->get('/productos_invernadero',[ControladorUsuario::class, 'productos_invernadero'])->middleware('auth');
+Route::name('fertilizante_validar')->get('/fertilizante_validar',[HomeController::class, 'fertilizante_validar'])->middleware('auth');
+Route::name('productos_fertilizante')->get('/productos_fertilizante',[ControladorUsuario::class, 'productos_fertilizante'])->middleware('auth');
+Route::name('herramienta_validar')->get('/herramienta_validar',[HomeController::class, 'herramienta_validar'])->middleware('auth');
+Route::name('productos_herramienta')->get('/productos_herramienta',[ControladorUsuario::class, 'productos_herramienta'])->middleware('auth');
+Route::name('planta_validar')->get('/planta_validar',[HomeController::class, 'planta_validar'])->middleware('auth');
+Route::name('productos_planta')->get('/productos_planta',[ControladorUsuario::class, 'productos_planta'])->middleware('auth');
