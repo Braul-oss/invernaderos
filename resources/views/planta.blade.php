@@ -54,11 +54,12 @@
     <h3>Administración de registro de plantas</h3>
     <h5>Tabla de registro</h5>
     <hr>
+    
     <p style="text-align: right;">
-        <a href="{{ route('planta_alta') }}">
-            <button type="button" class="boton">Nuevo Registro</button>
-</a>
-</p>
+        <a href="{{ route('planta.pdf', ['buscar' => request('buscar')]) }}" class="boton">PDF</a>
+        <a href="{{ route('planta_alta') }}" class="boton">Nuevo registro</a>
+    </p>
+
 <hr><br>
 <table class="table">
     <tr>
@@ -88,6 +89,11 @@
 </tr>
 @endforeach
 </table>
+
+<div class="pagination pagination-sm">
+            {{ $planta->links('pagination::bootstrap-5') }}
+</div>
+
 </div>
 </body>
 </html>

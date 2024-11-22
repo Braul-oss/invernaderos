@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Plantas;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class ControladorPlantas extends Controller
 {
@@ -101,6 +102,27 @@ class ControladorPlantas extends Controller
     public function planta_borrar(Plantas $id){
         $id->delete();
         return redirect()->route('planta');
+    }
+
+    public function pdf_planta(Request $request){
+        // Iniciar la consulta base
+        $query = Plantas::query();
+    
+        // Aplicar filtros si existen
+        if ($request->filled('buscar')) {
+            $query->where('nombre', 'like', '%' . $request->buscar . '%')
+                  ->orWhere('tipo', 'like', '%' . $request->buscar . '%')
+                  ->orWhere('precio', 'like', '%' . $request->buscar . '%');
+        }
+    
+        // Obtener los registros filtrados o todos
+        $planta = $query->get();
+    
+        // Generar el PDF
+        $pdf = Pdf::loadView('plantas.pdf', compact('planta'));
+    
+        // Descargar el PDF
+        return $pdf->download("lista_de_plantas.pdf");
     }
 }
 

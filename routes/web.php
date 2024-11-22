@@ -84,6 +84,12 @@ Route::name('herramienta_borrar')->get('/herramienta_borrar/{id}', [ControladorH
 Route::name('contactanos')->get('/contactanos', [ControladorContacto::class, 'contactanos']);
 Route::name('contacto_enviar')->post('/contacto_enviar', [ControladorContacto::class, 'contacto_enviar']);
 
-//PDF-------------------------------------------------------------------------------------------------------------
-//Route::name('personal.pdf')->get('personal/pdf',[ControladorPersonal::class,'pdf']);
-Route::get('personal/pdf', [ControladorPersonal::class, 'pdf'])->name('personal.pdf');
+//-----------------------------------------PDF/Personal-----------------------------------------------------------------
+Route::name('personal.pdf')->get('personal/pdf',[ControladorPersonal::class,'pdf']);
+//Route::get('personal/pdf', [ControladorPersonal::class, 'pdf'])->name('personal.pdf');
+
+//-----------------------------------------PDF/Plantas-----------------------------------------------------------------
+Route::name('planta.pdf')->get('plantas/pdf',[ControladorPlantas::class,'pdf_planta']);
+
+//-----------------------------------------PDF/Invernaderos-----------------------------------------------------------------
+Route::name('invernadero.pdf')->get('invernaderos/pdf',[ControladorInvernaderos::class,'pdf_invernaderos']);

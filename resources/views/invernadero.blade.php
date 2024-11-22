@@ -54,11 +54,12 @@
     <h3>Administración de registro de invernaderos</h3>
     <h5>Tabla de registro</h5>
     <hr>
+
     <p style="text-align: right;">
-        <a href="{{ route('invernadero_alta') }}">
-            <button type="button" class="boton">Nuevo Registro</button>
-</a>
-</p>
+        <a href="{{ route('invernadero.pdf', ['buscar' => request('buscar')]) }}" class="boton">PDF</a>
+        <a href="{{ route('invernadero_alta') }}" class="boton">Nuevo registro</a>
+    </p>
+    
 <hr><br>
 <table class="table">
     <tr>
@@ -88,6 +89,11 @@
 </tr>
 @endforeach
 </table>
+
+<div class="pagination pagination-sm">
+            {{ $invernadero->links('pagination::bootstrap-5') }}
+</div>
+
 </div>
 </body>
 </html>

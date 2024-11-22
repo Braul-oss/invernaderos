@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Invernaderos;
+use Barryvdh\DomPDF\Facade\Pdf;
+
 
 class ControladorInvernaderos extends Controller
 {
@@ -94,5 +96,26 @@ class ControladorInvernaderos extends Controller
     public function invernadero_borrar(Invernaderos $id){
         $id->delete();
         return redirect()->route('invernadero');
+    }
+
+    public function pdf_invernaderos(Request $request){
+        // Iniciar la consulta base
+        $query = Invernaderos::query();
+    
+        // Aplicar filtros si existen
+        if ($request->filled('buscar')) {
+            $query->where('tipo', 'like', '%' . $request->buscar . '%')
+                  ->orWhere('descripcion', 'like', '%' . $request->buscar . '%')
+                  ->orWhere('precio', 'like', '%' . $request->buscar . '%');
+        }
+    
+        // Obtener los registros filtrados o todos
+        $invernadero = $query->get();
+    
+        // Generar el PDF
+        $pdf = Pdf::loadView('invernaderos.pdf', compact('invernadero'));
+    
+        // Descargar el PDF
+        return $pdf->download("lista_de_invernaderos.pdf");
     }
 }
