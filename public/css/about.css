@@ -1,33 +1,91 @@
+/* Barra de Navegación */
+.navbar {
+    background-color: rgb(102, 38, 137); /* Fondo púrpura */
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar li {
+    float: right;
+}
+
+.navbar li a, .navbar .btn {
+    display: inline-block;
+    color: rgb(255, 255, 255); /* Texto blanco */
+    text-shadow: 0px 0px 5px #000000; /* Sombra del texto */
+    font-size: 18px;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.navbar li a:hover, .navbar .btn:hover {
+    color: rgb(255, 255, 255); /* Texto blanco */
+    background: rgb(50, 20, 68); /* Fondo púrpura oscuro */
+    border-radius: 5px;
+}
+
+.navbar .logo1 {
+    width: 100px;
+    height: auto;
+    margin-right: auto;
+    padding: 10px 20px;
+}
+
+.navbar .logo2 {
+    width: 165px;
+    height: auto;
+    margin-right: auto;
+    padding: 10px 20px;
+}
 .about-page {
-    font-family: Arial, sans-serif;
+    font-family: Verdana, sans-serif;
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* Fondo general */
+    color: rgb(0, 0, 0); /* Texto general */
 }
 
 .hero-section {
-    background-color: #f4f4f4;
+    background: linear-gradient(to right, rgb(102, 38, 137), rgb(50, 20, 68));
     text-align: center;
     padding: 50px 20px;
+    color: #ffffff;
+    text-shadow: 0px 0px 10px #000000;
 }
 
 .hero-section h1 {
     font-size: 2.5em;
-    color: #333;
+    margin-bottom: 10px;
 }
 
 .hero-section p {
     font-size: 1.2em;
-    color: #555;
+    margin: 0;
 }
 
 .values-section, .history-section {
     padding: 50px 20px;
     text-align: center;
+    background-color: rgb(240, 240, 240);
 }
 
 .values-section h2, .history-section h2 {
     font-size: 2em;
-    color: #333;
     margin-bottom: 20px;
+    color: rgb(102, 38, 137); /* Color principal */
+    text-shadow: 0px 0px 10px #000000;
 }
 
 .values-grid {
@@ -38,23 +96,106 @@
 }
 
 .value-item {
-    background: #f9f9f9;
+    background: rgb(255, 255, 255);
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 2px solid rgb(102, 38, 137);
     border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .value-item h3 {
     font-size: 1.5em;
-    color: #222;
+    color: rgb(102, 38, 137);
+    margin-bottom: 10px;
 }
 
 .value-item p {
-    color: #666;
+    color: rgb(50, 50, 50);
 }
 
 .history-section p {
     max-width: 800px;
     margin: 10px auto;
-    color: #555;
+    color: rgb(50, 50, 50);
+    line-height: 1.8;
 }
+
+a, .btn {
+    display: inline-block;
+    color: rgb(0, 0, 0);
+    text-shadow: 0px 0px 5px #000000;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    background: rgb(102, 38, 137);
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+a:hover, .btn:hover {
+    color: #ffffff;
+    background: rgb(50, 20, 68);
+}
+
+/* Nuestro Equipo Directivo */
+.team-section {
+    padding: 50px 20px;
+    background-color: rgb(240, 240, 240); /* Fondo claro */
+    text-align: center;
+}
+
+.team-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: rgb(102, 38, 137); /* Color principal */
+    text-shadow: 0px 0px 10px #000000;
+}
+
+.team-section p {
+    font-size: 1.2em;
+    color: rgb(50, 50, 50);
+    margin-bottom: 30px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.team-member {
+    background: #ffffff;
+    border: 2px solid rgb(102, 38, 137);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.team-member img {
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.team-member h3 {
+    font-size: 1.5em;
+    color: rgb(102, 38, 137);
+    margin-bottom: 10px;
+}
+
+.team-member p {
+    color: rgb(50, 50, 50);
+    font-size: 1em;
+}
+
