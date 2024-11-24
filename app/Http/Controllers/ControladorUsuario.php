@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Invernaderos;
+use App\Models\Herramientas;
+use App\Models\Plantas;
 
 class ControladorUsuario extends Controller
 {
@@ -13,7 +16,8 @@ class ControladorUsuario extends Controller
 
     public function productos_invernadero(){
     
-        return view('productos_invernadero');
+        $productos = Invernaderos::all();
+        return view('productos_invernadero', compact('productos'));
     }
 
     public function productos_fertilizante(){
@@ -23,11 +27,13 @@ class ControladorUsuario extends Controller
 
     public function productos_herramienta(){
     
-        return view('productos_herramienta');
+        $productos = Herramientas::all();
+        return view('productos_herramienta', compact('productos'));
     }
 
     public function productos_planta(){
     
-        return view('productos_planta');
+        $productos = Plantas::all();
+        return view('productos_planta', compact('productos'));
     }
 }

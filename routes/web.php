@@ -14,6 +14,7 @@ use App\Http\Controllers\ControladorPersonal;
 use App\Http\Controllers\ControladorUsuario;
 use App\Http\Controllers\ControladorPanel;
 use App\Http\Controllers\ControladorContacto;
+use App\Http\Controllers\ControladorCarrito;
 
 
 /*
@@ -106,3 +107,6 @@ Route::name('herramienta_validar')->get('/herramienta_validar',[HomeController::
 Route::name('productos_herramienta')->get('/productos_herramienta',[ControladorUsuario::class, 'productos_herramienta'])->middleware('auth');
 Route::name('planta_validar')->get('/planta_validar',[HomeController::class, 'planta_validar'])->middleware('auth');
 Route::name('productos_planta')->get('/productos_planta',[ControladorUsuario::class, 'productos_planta'])->middleware('auth');
+
+//-----------------------------------------Carrito-----------------------------------------------------------------------------
+Route::name('agregar_carrito')->post('/agregar_carrito', [ControladorCarrito::class, 'agregar_carrito']);
