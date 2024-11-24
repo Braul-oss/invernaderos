@@ -60,6 +60,7 @@ Route::name('personal_detalle')->get('/personal_detalle/{id}',[ControladorPerson
 Route::name('personal_editar')->get('/personal_editar/{id}', [ControladorPersonal::class, 'personal_editar']);
 Route::name('personal_actualizar')->put('/personal_actualizar/{id}', [ControladorPersonal::class, 'personal_actualizar']);
 Route::name('personal_borrar')->get('/personal_borrar/{id}', [ControladorPersonal::class, 'personal_borrar']);
+Route::name('personal_grafica')->get('/personal_grafica', [ControladorPersonal::class, 'personal_grafica']);
 
 Route::name('planta_alta')->get('/planta_alta',[ControladorPlantas::class,'planta_alta']);
 Route::name('planta_registrar')->post('/planta_registrar', [ControladorPlantas::class, 'planta_registrar']);

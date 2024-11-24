@@ -139,4 +139,19 @@ class ControladorPersonal extends Controller
         return $pdf->download("lista_de_personal.pdf");
     }
 
+    public function personal_grafica(){
+        $cargos = \DB::table('tb_personal')
+        ->select('cargo',
+        \DB::raw('count(*) as total'))
+        ->groupBy('cargo')
+        ->get();
+
+        $nombres = \DB::table('tb_personal')
+        ->select('nombre',
+        \DB::raw('count(*) as total'))
+        ->groupBy('nombre')
+        ->get();
+
+        return view('personal_grafica', compact('cargos', 'nombres'));
+    }
 }
