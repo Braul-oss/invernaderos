@@ -72,12 +72,12 @@
             <p>Directora General</p>
         </div>
         <div class="team-member">
-            <img src="{{ asset('imagenes/Gustavo.jpg') }}" alt="Directora Financiera">
+            <img src="{{ asset('imagenes/Gustavo.jpg') }}" alt="Desarrollador web">
             <h3>Gustavo Vazquez</h3>
             <p>Desarrollador web</p>
         </div>
         <div class="team-member">
-            <img src="{{ asset('imagenes/img.png') }}" alt="Director de Operaciones">
+            <img src="{{ asset('imagenes/img.png') }}" alt="Gestor de bases de datos">
             <h3>Braulio Hernández</h3>
             <p>Gestor de bases de datos</p>
         </div>
