@@ -124,5 +124,19 @@ class ControladorPlantas extends Controller
         // Descargar el PDF
         return $pdf->download("lista_de_plantas.pdf");
     }
+
+    public function planta_grafica(){
+        $tipos = \DB::table('tb_planta')
+        ->select('tipo',
+        \DB::raw('count(*) as total'))
+        ->groupBy('tipo')
+        ->get();
+
+        $precios = \DB::table('tb_planta')
+        ->select('nombre', 'precio')
+        ->get();
+
+        return view('planta_grafica', compact('tipos', 'precios'));
+    }
 }
 

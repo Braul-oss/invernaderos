@@ -120,4 +120,18 @@ class ControladorHerramientas extends Controller
         // Descargar el PDF
         return $pdf->download("lista_de_herramientas.pdf");
     }
+
+    public function herramienta_grafica(){
+        $nombres = \DB::table('tb_herramienta')
+        ->select('nombre',
+        \DB::raw('count(*) as total'))
+        ->groupBy('nombre')
+        ->get();
+
+        $precios = \DB::table('tb_herramienta')
+        ->select('nombre', 'precio')
+        ->get();
+
+        return view('herramienta_grafica', compact('nombres', 'precios'));
+    }
 }

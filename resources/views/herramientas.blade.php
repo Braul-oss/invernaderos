@@ -56,6 +56,7 @@
     <hr>
 
     <p style="text-align: right;">
+        <a href="{{ route('herramienta_grafica') }}" class="boton">Ver Gráfica</a>
         <a href="{{ route('herramienta.pdf', ['buscar' => request('buscar')]) }}" class="boton">PDF</a>
         <a href="{{ route('herramienta_alta') }}" class="boton">Nuevo registro</a>
     </p>

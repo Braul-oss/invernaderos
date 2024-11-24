@@ -68,6 +68,7 @@ Route::name('planta_detalle')->get('/planta_detalle/{id}',[ControladorPlantas::c
 Route::name('planta_editar')->get('/planta_editar/{id}', [ControladorPlantas::class, 'planta_editar']);
 Route::name('planta_actualizar')->put('/planta_actualizar/{id}', [ControladorPlantas::class, 'planta_actualizar']);
 Route::name('planta_borrar')->get('/planta_borrar/{id}', [ControladorPlantas::class, 'planta_borrar']);
+Route::name('planta_grafica')->get('/planta_grafica', [ControladorPlantas::class, 'planta_grafica']);
 
 Route::name('invernadero_alta')->get('/invernadero_alta',[ControladorInvernaderos::class,'invernadero_alta']);
 Route::name('invernadero_registrar')->post('/invernadero_registrar', [ControladorInvernaderos::class, 'invernadero_registrar']);
@@ -82,6 +83,7 @@ Route::name('herramienta_detalle')->get('/herramienta_detalle/{id}',[Controlador
 Route::name('herramienta_editar')->get('/herramienta_editar/{id}', [ControladorHerramientas::class, 'herramienta_editar']);
 Route::name('herramienta_actualizar')->put('/herramienta_actualizar/{id}', [ControladorHerramientas::class, 'herramienta_actualizar']);
 Route::name('herramienta_borrar')->get('/herramienta_borrar/{id}', [ControladorHerramientas::class, 'herramienta_borrar']);
+Route::name('herramienta_grafica')->get('/herramienta_grafica', [ControladorHerramientas::class, 'herramienta_grafica']);
 
 Route::name('contactanos')->get('/contactanos', [ControladorContacto::class, 'contactanos']);
 Route::name('contacto_enviar')->post('/contacto_enviar', [ControladorContacto::class, 'contacto_enviar']);
