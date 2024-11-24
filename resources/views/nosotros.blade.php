@@ -77,7 +77,7 @@
             <p>Desarrollador web</p>
         </div>
         <div class="team-member">
-            <img src="{{ asset('imagenes/img.png') }}" alt="Gestor de bases de datos">
+            <img src="{{ asset('imagenes/Img.png') }}" alt="Gestor de bases de datos">
             <h3>Braulio Hernández</h3>
             <p>Gestor de bases de datos</p>
         </div>
