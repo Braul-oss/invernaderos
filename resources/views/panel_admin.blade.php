@@ -39,7 +39,7 @@
         <div class="carousel-item">
             <img src="{{ asset('img/fertilizantes.png') }}" alt="Fertilizantes">
             <div class="content">
-                <a href="{{ route('invernadero') }}" class="btn btn-default btn-lg">Fertilizantes</a>
+                <a href="{{ route('fertilizantes') }}" class="btn btn-default btn-lg">Fertilizantes</a>
             </div>
         </div>
 

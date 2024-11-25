@@ -20,9 +20,10 @@ class ControladorFertilizantes extends Controller
 
     public function fertilizante_registrar(Request $request){
         $this->validate($request,[
-            'tipo' => 'required',
+            'nombre' => 'required',
             'descripcion' => 'required',
             'precio' => 'required',
+            'stock' => 'required',
         ]);
 
         if($request->file('imagen') !=''){
@@ -33,36 +34,38 @@ class ControladorFertilizantes extends Controller
             \Storage::disk('local')->put($img2, \File::get($file));
         }
         else{
-            $img2 = "invernadero.png";
+            $img2 = "fertilizante.png";
         }
 
-        Invernaderos::create(array(
-            'tipo' => $request->input('tipo'),
+        Fertilizantes::create(array(
+            'nombre' => $request->input('nombre'),
             'descripcion' => $request->input('descripcion'),
             'precio' => $request->input('precio'),
+            'stock' => $request->input('stock'),
             'imagen' => $img2
         ));
 
-        return redirect()->route('invernadero');
+        return redirect()->route('fertilizantes');
     }
 
-    public function invernadero_detalle($id){
-        $query = Invernaderos::find($id);
-        return view("invernadero_detalle")
-        ->with(['invernadero' => $query]);
+    public function fertilizante_detalle($id){
+        $query = Fertilizantes::find($id);
+        return view("fertilizante_detalle")
+        ->with(['fertilizante' => $query]);
     }
 
-    public function invernadero_editar($id){
-        $query = Invernaderos::find($id);
-        return view("invernadero_editar")
-        ->with(['invernadero' => $query]);
+    public function fertilizante_editar($id){
+        $query = Fertilizantes::find($id);
+        return view("fertilizante_editar")
+        ->with(['fertilizante' => $query]);
     }
 
-    public function invernadero_actualizar(Invernaderos $id, Request $request) {
+    public function fertilizante_actualizar(Fertilizantes $id, Request $request) {
         $this->validate($request, [
-            'tipo' => 'required',
+            'nombre' => 'required',
             'descripcion' => 'required',
             'precio' => 'required',
+            'stock' => 'required',
         ]);
     
         // Guarda la imagen solo si se ha subido una nueva
@@ -80,40 +83,41 @@ class ControladorFertilizantes extends Controller
             $img2 = $id->imagen;
         }
     
-        // Actualiza el invernadero
+        // Actualiza el fertilizante
         $id->update([
-            'tipo' => $request->input('tipo'),
+            'nombre' => $request->input('nombre'),
             'descripcion' => $request->input('descripcion'),
             'precio' => $request->input('precio'),
+            'stock' => $request->input('stock'),
             'imagen' => $img2
         ]);
     
-        return redirect()->route("invernadero", ['id' => $id->id_invernadero]);
+        return redirect()->route("fertilizantes", ['id' => $id->id_fertilizante]);
     }
 
-    public function invernadero_borrar(Invernaderos $id){
+    public function fertilizante_borrar(Fertilizantes $id){
         $id->delete();
-        return redirect()->route('invernadero');
+        return redirect()->route('fertilizantes');
     }
 
-    public function pdf_invernaderos(Request $request){
+    public function pdf_fertilizantes(Request $request){
         // Iniciar la consulta base
-        $query = Invernaderos::query();
+        $query = Fertilizantes::query();
     
         // Aplicar filtros si existen
         if ($request->filled('buscar')) {
-            $query->where('tipo', 'like', '%' . $request->buscar . '%')
+            $query->where('nombre', 'like', '%' . $request->buscar . '%')
                   ->orWhere('descripcion', 'like', '%' . $request->buscar . '%')
                   ->orWhere('precio', 'like', '%' . $request->buscar . '%');
         }
     
         // Obtener los registros filtrados o todos
-        $invernadero = $query->get();
+        $fertilizante = $query->get();
     
         // Generar el PDF
-        $pdf = Pdf::loadView('invernaderos.pdf', compact('invernadero'));
+        $pdf = Pdf::loadView('fertilizantes.pdf', compact('fertilizante'));
     
         // Descargar el PDF
-        return $pdf->download("lista_de_invernaderos.pdf");
+        return $pdf->download("lista_de_fertilizantes.pdf");
     }
 }

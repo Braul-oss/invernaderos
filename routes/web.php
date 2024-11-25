@@ -29,7 +29,7 @@ use App\Http\Controllers\ControladorCarrito;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 //------------------------------------------------------------------------------------------------------------
@@ -85,6 +85,14 @@ Route::name('herramienta_actualizar')->put('/herramienta_actualizar/{id}', [Cont
 Route::name('herramienta_borrar')->get('/herramienta_borrar/{id}', [ControladorHerramientas::class, 'herramienta_borrar']);
 Route::name('herramienta_grafica')->get('/herramienta_grafica', [ControladorHerramientas::class, 'herramienta_grafica']);
 
+Route::name('fertilizante_alta')->get('/fertilizante_alta',[ControladorFertilizantes::class, 'fertilizante_alta']);
+Route::name('fertilizante_registrar')->post('/fertilizante_registrar',[ControladorFertilizantes::class, 'fertilizante_registrar']);
+Route::name('fertilizante_detalle')->get('/fertilizante_detalle/{id}',[ControladorFertilizantes::class, 'fertilizante_detalle']);
+Route::name('fertilizante_editar')->get('/fertilizante_editar/{id}',[ControladorFertilizantes::class, 'fertilizante_editar']);
+Route::name('fertilizante_actualizar')->put('/fertilizante_actualizar/{id}',[ControladorFertilizantes::class, 'fertilizante_actualizar']);
+Route::name('fertilizante_borrar')->get('/fertilizante_borrar/{id}', [ControladorFertilizantes::class, 'fertilizante_borrar']);
+
+
 Route::name('contactanos')->get('/contactanos', [ControladorContacto::class, 'contactanos']);
 Route::name('contacto_enviar')->post('/contacto_enviar', [ControladorContacto::class, 'contacto_enviar']);
 
@@ -100,6 +108,10 @@ Route::name('invernadero.pdf')->get('invernaderos/pdf',[ControladorInvernaderos:
 
 //-----------------------------------------PDF/Herramientas-----------------------------------------------------------------
 Route::name('herramienta.pdf')->get('herramientas/pdf',[ControladorHerramientas::class,'pdf_herramientas']);
+
+//-----------------------------------------PDF/Herramientas-----------------------------------------------------------------
+Route::name('fertilizante.pdf')->get('fertilizanntes/pdf',[ControladorFertilizantes::class,'pdf_fertilizantes']);
+
 
 //-----------------------------------------Validaciones Usuario
 Route::name('invernadero_validar')->get('/invernadero_validar',[HomeController::class, 'invernadero_validar'])->middleware('auth');
