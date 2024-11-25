@@ -73,7 +73,7 @@
         </div>
         <div class="team-member">
             <img src="{{ asset('imagenes/Gustavo.jpg') }}" alt="Desarrollador web">
-            <h3>Gustavo Vazquez</h3>
+            <h3>Chloe Ramírez</h3>
             <p>Desarrollador web</p>
         </div>
         <div class="team-member">
