@@ -11,9 +11,8 @@
     <nav class="navbar">
         <div class="logo-container">
             <a href="login.html"> 
-                <img src="{{ asset('imagenes/dino.jpg') }}" alt="Logo" class="logo1">
+                <img src="{{ asset('img/dino.jpg') }}" alt="Logo" class="logo1">
             </a>
-                <img src="{{ asset('imagenes/logolt.png') }}" alt="Logo2" class="logo2">
         </div>
         <ul>
             <li>
@@ -22,8 +21,8 @@
             <button type="submit" class="cierre">Cerrar sesión</button>
             </form>
             </li>
-            <li><a href="{{ route('login') }}">Productos</a></li>
-            <li><a href="{{ route('login') }}">Nosotros</a></li>
+            <li><a href="{{ route('productos') }}">Productos</a></li>
+            <li><a href="{{ route('nosotros') }}">Nosotros</a></li>
         </ul>
     </nav>
 

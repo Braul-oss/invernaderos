@@ -39,12 +39,13 @@
                 <h5 class="card-title">{{ $producto->tipo }}</h5>
                 <p class="card-text">{{ $producto->descripcion }}</p>
                 <p class="card-text">Precio: ${{ $producto->precio }}</p>
-                <form action="{{ route('agregar_carrito', $producto->id) }}" method="POST">
-                    @csrf
-                    <button type="submit" class="btn btn-primary">
-                        Agregar al carrito
-                    </button>
-                </form>
+
+<form action="{{ route('agregar_carrito', ['id' => $producto->id_invernadero]) }}" method="POST">
+    @csrf
+    <button type="submit" class="btn btn-primary">
+        Agregar al carrito
+    </button>
+</form>
             </div>
         </div>
     </div>

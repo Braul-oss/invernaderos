@@ -125,4 +125,7 @@ Route::name('planta_validar')->get('/planta_validar',[HomeController::class, 'pl
 Route::name('productos_planta')->get('/productos_planta',[ControladorUsuario::class, 'productos_planta'])->middleware('auth');
 
 //-----------------------------------------Carrito-----------------------------------------------------------------------------
-Route::name('agregar_carrito')->post('/agregar_carrito', [ControladorCarrito::class, 'agregar_carrito']);
+Route::name('agregar_carrito')->post('/agregar_carrito/{id}', [ControladorCarrito::class, 'agregar_carrito']);
+Route::name('carrito')->get('/carrito',[ControladorCarrito::class, 'carrito']);
+Route::name('actualizar_carrito')->post('/actualizar_carrito/{id}', [ControladorCarrito::class, 'actualizar_carrito']);
+Route::name('eliminar_carrito')->get('/eliminar_carrito/{id}', [ControladorCarrito::class, 'eliminar_carrito']);

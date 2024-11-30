@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Invernaderos;
 use App\Models\Herramientas;
 use App\Models\Plantas;
+use App\Models\Fertilizantes;
 
 class ControladorUsuario extends Controller
 {
@@ -17,12 +18,14 @@ class ControladorUsuario extends Controller
     public function productos_invernadero(){
     
         $productos = Invernaderos::all();
+        //dd($productos->toArray());
         return view('productos_invernadero', compact('productos'));
     }
 
     public function productos_fertilizante(){
     
-        return view('productos_fertilizante');
+        $productos = Fertilizantes::all();
+        return view('productos_fertilizante', compact('productos'));
     }
 
     public function productos_herramienta(){
