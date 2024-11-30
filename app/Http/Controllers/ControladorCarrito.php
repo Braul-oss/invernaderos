@@ -4,12 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Invernaderos;
+use App\Models\Fertilizantes;
+use App\Models\Plantas;
+use App\Models\Herramientas;
 
 class ControladorCarrito extends Controller
 {
     public function agregar_carrito($id)
 {
     $producto = Invernaderos::find($id);
+    $producto = Fertilizantes::find($id);
+    $producto = Plantas::find($id);
+    $producto = Herramientas::find($id);
 
     if (!$producto) {
         return redirect()->back()->with('error', 'El producto no existe');
