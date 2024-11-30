@@ -40,12 +40,10 @@
                 <p class="card-text">{{ $producto->descripcion }}</p>
                 <p class="card-text">Precio: ${{ $producto->precio }}</p>
 
-<form action="{{ route('agregar_carrito', ['id' => $producto->id_invernadero]) }}" method="POST">
-    @csrf
-    <button type="submit" class="btn btn-primary">
-        Agregar al carrito
-    </button>
-</form>
+                <form action="{{ route('agregar_carrito', ['tipo' => 'invernadero', 'id' => $producto->id_invernadero]) }}" method="POST">
+                  @csrf
+                  <button type="submit" class="btn btn-primary">Agregar al carrito</button>
+                </form>
             </div>
         </div>
     </div>

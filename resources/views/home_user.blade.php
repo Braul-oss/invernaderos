@@ -21,7 +21,6 @@
             <button type="submit" class="cierre">Cerrar sesión</button>
             </form>
             </li>
-            <li><a href="{{ route('productos') }}">Productos</a></li>
             <li><a href="{{ route('nosotros') }}">Nosotros</a></li>
         </ul>
     </nav>
