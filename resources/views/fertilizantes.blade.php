@@ -24,6 +24,10 @@
 		    	<li class="desp">
                     <a href="javascript:void(0)" class="menu">Administración de catalogos</a>
                     <div class="cont_cj">
+<<<<<<< HEAD
+=======
+                        <a href="adminis.php">Cliente</a>
+>>>>>>> 43b2ffc76e5b13b9e7f7dab2ac286fda289d9f7d
                         <a href="{{ route('fertilizantes') }}">Fertilizante</a>
                         <a href="{{ route('herramientas') }}">Herramienta</a>
                         <a href="{{ route('invernadero') }}">Tipo de invernadero</a>

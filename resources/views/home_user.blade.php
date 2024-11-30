@@ -23,7 +23,6 @@
             </form>
             </li>
             <li><a href="{{ route('login') }}">Productos</a></li>
-            <li><a href="{{ route('login') }}">Servicios</a></li>
             <li><a href="{{ route('login') }}">Nosotros</a></li>
         </ul>
     </nav>
