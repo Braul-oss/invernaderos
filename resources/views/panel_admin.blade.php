@@ -58,13 +58,6 @@
         </div>
 
         <div class="carousel-item">
-            <img src="{{ asset('img/clientes.png') }}" alt="Clientes">
-            <div class="content">
-                <a href="{{ route('planta') }}" class="btn btn-default btn-lg">Clientes</a>
-            </div>
-        </div>
-
-        <div class="carousel-item">
             <img src="{{ asset('img/personales.png') }}" alt="Personal">
             <div class="content">
                 <a href="{{ route('personal') }}" class="btn btn-default btn-lg">Personal</a>

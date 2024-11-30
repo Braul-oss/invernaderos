@@ -76,6 +76,7 @@ Route::name('invernadero_detalle')->get('/invernadero_detalle/{id}',[Controlador
 Route::name('invernadero_editar')->get('/invernadero_editar/{id}', [ControladorInvernaderos::class, 'invernadero_editar']);
 Route::name('invernadero_actualizar')->put('/invernadero_actualizar/{id}', [ControladorInvernaderos::class, 'invernadero_actualizar']);
 Route::name('invernadero_borrar')->get('/invernadero_borrar/{id}', [ControladorInvernaderos::class, 'invernadero_borrar']);
+Route::name('invernadero_grafica')->get('/invernadero_grafica', [ControladorInvernaderos::class, 'invernadero_grafica']);
 
 Route::name('herramienta_alta')->get('/herramienta_alta',[ControladorHerramientas::class,'herramienta_alta']);
 Route::name('herramienta_registrar')->post('/herramienta_registrar', [ControladorHerramientas::class, 'herramienta_registrar']);
@@ -91,7 +92,7 @@ Route::name('fertilizante_detalle')->get('/fertilizante_detalle/{id}',[Controlad
 Route::name('fertilizante_editar')->get('/fertilizante_editar/{id}',[ControladorFertilizantes::class, 'fertilizante_editar']);
 Route::name('fertilizante_actualizar')->put('/fertilizante_actualizar/{id}',[ControladorFertilizantes::class, 'fertilizante_actualizar']);
 Route::name('fertilizante_borrar')->get('/fertilizante_borrar/{id}', [ControladorFertilizantes::class, 'fertilizante_borrar']);
-
+Route::name('fertilizante_grafica')->get('/fertilizante_grafica', [ControladorFertilizantes::class, 'fertilizante_grafica']);
 
 Route::name('contactanos')->get('/contactanos', [ControladorContacto::class, 'contactanos']);
 Route::name('contacto_enviar')->post('/contacto_enviar', [ControladorContacto::class, 'contacto_enviar']);

@@ -120,4 +120,18 @@ class ControladorFertilizantes extends Controller
         // Descargar el PDF
         return $pdf->download("lista_de_fertilizantes.pdf");
     }
+
+    public function fertilizante_grafica(){
+        $nombres = \DB::table('tb_fertilizantes')
+        ->select('nombre',
+        \DB::raw('count(*) as total'))
+        ->groupBy('nombre')
+        ->get();
+
+        $precios = \DB::table('tb_fertilizantes')
+        ->select('nombre', 'precio')
+        ->get();
+
+        return view('fertilizante_grafica', compact('nombres', 'precios'));
+    }
 }

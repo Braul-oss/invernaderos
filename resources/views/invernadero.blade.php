@@ -24,7 +24,6 @@
 		    	<li class="desp">
                     <a href="javascript:void(0)" class="menu">Administración de catalogos</a>
                     <div class="cont_cj">
-                        <a href="adminis.php">Cliente</a>
                         <a href="{{ route('fertilizantes') }}">Fertilizante</a>
                         <a href="{{ route('herramientas') }}">Herramienta</a>
                         <a href="{{ route('invernadero') }}">Tipo de invernadero</a>
@@ -56,6 +55,7 @@
     <hr>
 
     <p style="text-align: right;">
+        <a href="{{ route('invernadero_grafica') }}" class="boton">Ver Gráfica</a>
         <a href="{{ route('invernadero.pdf', ['buscar' => request('buscar')]) }}" class="boton">PDF</a>
         <a href="{{ route('invernadero_alta') }}" class="boton">Nuevo registro</a>
     </p>

@@ -118,4 +118,18 @@ class ControladorInvernaderos extends Controller
         // Descargar el PDF
         return $pdf->download("lista_de_invernaderos.pdf");
     }
+
+    public function invernadero_grafica(){
+        $tipos = \DB::table('tb_tinvernadero')
+        ->select('tipo',
+        \DB::raw('count(*) as total'))
+        ->groupBy('tipo')
+        ->get();
+
+        $precios = \DB::table('tb_tinvernadero')
+        ->select('tipo', 'precio')
+        ->get();
+
+        return view('invernadero_grafica', compact('tipos', 'precios'));
+    }
 }
