@@ -64,6 +64,23 @@ body{
     cursor: pointer;
 }
 
+.boton{
+  background-color: #000000;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  color: #fff;
+  text-decoration: none;
+}
+
+.boton:hover{
+  background-color: #0c4f4e;
+  cursor: pointer;
+}
+
 #encabezado{
     background-color: rgb(255, 255, 255);
     text-align: center;
@@ -116,6 +133,22 @@ body{
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
   }
+
+  .menu li h1{
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    width: 850px;
+    height: 80px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
   .cierre {
     background-color: #ffffff;
     color: #000000;
@@ -143,4 +176,13 @@ body{
 h1{
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+}
+
+h2{
+  font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+p{
+  font-family: Arial, Helvetica, sans-serif;
 }
